@@ -1,5 +1,5 @@
 ---
-name: Poc Example
+name: Poc Example1
 on:
   push:
     branches: [ main ]
