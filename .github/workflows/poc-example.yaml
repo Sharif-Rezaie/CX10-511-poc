@@ -1,0 +1,16 @@
+---
+name: Poc Example
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    name: Build
+    runs-on: self-hosted
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: HelloWorld
+      run: |
+        echo "Hello World from self hosted poc runner!"
