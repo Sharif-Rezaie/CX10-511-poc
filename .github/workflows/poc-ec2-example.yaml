@@ -1,0 +1,25 @@
+---
+name: Poc Example with ec2
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    name: List S3 contents
+    runs-on: self-hosted
+    # These permissions are needed to interact with GitHub's OIDC Token endpoint.
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: arn:aws:iam::103111145015:role/CX10-511-poc-role
+        aws-region: eu-central-1
+    - name: Copy files to the test website with the AWS CLI
+      run: |
+        aws s3 ls s3://test-1001-bucket
