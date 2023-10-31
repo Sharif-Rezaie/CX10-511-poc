@@ -8,12 +8,11 @@ jobs:
   deploy:
     name: List S3 contents
     runs-on: self-hosted
-    # These permissions are needed to interact with GitHub's OIDC Token endpoint.
     permissions:
       id-token: write
       contents: read
     steps:
-    - name: Checkout
+    - name: Checkout (Checkout (Git clone the repository))
       uses: actions/checkout@v3
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v4

@@ -8,9 +8,9 @@ jobs:
     name: Build
     runs-on: self-hosted
     steps:
-    - name: Checkout
+    - name: Checkout (Git clone the repository)
       uses: actions/checkout@v2
 
     - name: HelloWorld
       run: |
-        echo "Hello World from self hosted poc runner!"
+        echo "Hello World from k8s cluster self hosted runner!"
