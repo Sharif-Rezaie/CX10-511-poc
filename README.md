@@ -4,3 +4,4 @@
 
 #### Running another test from the ec2 runner
 1.Will egress only work? will find out in the next actionflow
+I am still testing this, I have to allow ssh
