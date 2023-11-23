@@ -4,6 +4,9 @@ on:
   push:
     branches: [ main ]
 
+env:
+  AWS_REGION: eu-central-1
+  S3_BUCKET: test-1001-bucket
 jobs:
   deploy:
     name: List S3 contents
