@@ -17,8 +17,9 @@ jobs:
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v4
       with:
-        role-to-assume: arn:aws:iam::103111145015:role/CX10-511-poc-role
-        aws-region: eu-central-1
-    - name: Copy files to the test website with the AWS CLI
+        role-to-assume: ${{ secrets.ROLE_ARN }}
+        role-session-name: OIDC-Github-action-role
+        aws-region: ${{ env.AWS_REGION }}
+    - name: List s3 bucket files
       run: |
-        aws s3 ls s3://test-1001-bucket
+        aws s3 ls s3://${{ env.S3_BUCKET }}
