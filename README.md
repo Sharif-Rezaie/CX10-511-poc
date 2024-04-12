@@ -1,8 +1,4 @@
 # CX10-511-poc
 
-### A self hosted runner poc example repo.
-
-#### Running another test from the ec2 runner
-1.Will egress only work? Yes, it works. But first the service has to be started. Therefore allowing ssh port for restarting the service might be necessary at the begining. 
-
-I am still testing this, I have to allow ssh
+## A PoC for self-hosted runner in Github
+This PoC sets up a self-hosted runner which was raised via ticket `CX10-511-poc` and documented extensively in this confluence page document: https://adesso-as-a-service.atlassian.net/l/cp/BNkQeQKF
